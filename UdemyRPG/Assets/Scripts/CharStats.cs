@@ -14,6 +14,7 @@ public class CharStats : MonoBehaviour
     public int maxHP = 100;
     public int currentMP;
     public int maxMP = 30;
+    public int[] mpLvlBonus;
     public int strength;
     public int defence;
     public int wpnPwr;
@@ -25,6 +26,7 @@ public class CharStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Popula Xp para cada Level
         expToNextLevel = new int[maxLevel];
         expToNextLevel[1] = baseExp;
 
@@ -39,7 +41,7 @@ public class CharStats : MonoBehaviour
     {
         //Metodo de teste, e como reconhecer outros inputs
         if(Input.GetKeyDown(KeyCode.K)){
-            AddExp(500);
+            AddExp(1000);
         }
     }
 
@@ -47,11 +49,37 @@ public class CharStats : MonoBehaviour
         //Adiciona Xp
         currentEXP += expToAdd;
 
-        //Verifica se pode subir de nivel
-        if(currentEXP > expToNextLevel[playerLevel]){
-            //Utiliza o Xp necessario e sobe de nivel
-            currentEXP -= expToNextLevel[playerLevel];
-            playerLevel++;
+        //Verifica se ja atingiu o Lvl Maximo
+        if(playerLevel < maxLevel){
+            //Verifica se pode subir de nivel
+            if(currentEXP > expToNextLevel[playerLevel])
+            {
+                //Utiliza o Xp necessario e sobe de nivel
+                currentEXP -= expToNextLevel[playerLevel];
+                playerLevel++;
+
+                //Determina qual status adicionar Str ou Def baseado em par ou impar
+                if(playerLevel%2 == 0)
+                {
+                    strength++;
+                }else{
+                    defence++;
+                }
+
+                //Aumente Hp maximo
+                maxHP = Mathf.FloorToInt(maxHP * 1.05f);
+
+                //Restora HP
+                currentHP = maxHP;
+
+                //Adiciona MP
+                maxMP += mpLvlBonus[playerLevel];
+                currentMP = maxMP;
+            }
+        }
+        //Limpa o Xp caso estaja no Max lvl
+        if(playerLevel >= maxLevel){
+            currentEXP = 0;
         }
     }
 
