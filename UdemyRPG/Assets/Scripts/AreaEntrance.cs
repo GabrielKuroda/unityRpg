@@ -10,14 +10,18 @@ public class AreaEntrance : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Verifica se o nome da transação do Objeto linkado ao script é o mesmo que se encontra no Player
+        //Verifica se o nome da transaï¿½ï¿½o do Objeto linkado ao script ï¿½ o mesmo que se encontra no Player
         if(transitionName == PlayerController.instance.areaTransitionName)
         {
-            //Set na posição do Player na mesma pos que o objeto do script
+            //Set na posiï¿½ï¿½o do Player na mesma pos que o objeto do script
             PlayerController.instance.transform.position = transform.position;
         }
 
+        //Indica que a UI deve fazer a animaÃ§Ã£o de volta
         UIFade.instance.FadeFromBlack();
+
+        //Indica ao MAnager que o Player nÃ£o estÃ¡ transitando entre areas
+        GameManager.instance.fadingBetweenAreas = false;
     }
 
     // Update is called once per frame

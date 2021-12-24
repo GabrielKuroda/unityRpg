@@ -25,11 +25,15 @@ public class AreaExit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //verifica se o player está esperando o Load de cenas
         if (shouldLoadAfterFade)
         {
+            //realiza um delay entre os laods
             waitToLoad -= Time.deltaTime;
+            //Verifica se o Delay acabou
             if(waitToLoad <= 0)
             {
+                //Indica que o load terminou
                 shouldLoadAfterFade = false;
 
                 //Carrega a cena
@@ -43,8 +47,13 @@ public class AreaExit : MonoBehaviour
         //Verifica se o Objeto possui a tag de player
         if(other.tag == "Player")
         {
-            
+            //Indica que o jogo deve carregar a nova cena
             shouldLoadAfterFade = true;
+
+            //Indica que o player está transitando entre areas
+            GameManager.instance.fadingBetweenAreas = true;
+
+            //Indica que a Animação de transito deve ser realizada
             UIFade.instance.FadeToBlack();
 
             //Define a varivael areaTransitionName do Player

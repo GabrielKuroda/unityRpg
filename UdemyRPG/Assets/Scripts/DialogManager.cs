@@ -27,13 +27,13 @@ public class DialogManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Verifica se o Box de dialogo est� ativo
+        //Verifica se o Box de dialogo est� ativo
         if (dialogBox.activeInHierarchy)
         {
-            //Verifica se o bot�o Fire1 foi solto
+            //Verifica se o bot�o Fire1 foi solto
             if (Input.GetButtonUp("Fire1"))
             {
-                //Verifica se � o primeiro click
+                //Verifica se � o primeiro click
                 if (!justStarted)
                 {
                     currentLine++;
@@ -41,20 +41,24 @@ public class DialogManager : MonoBehaviour
                     //Verifica se o Array de frases terminou
                     if (currentLine >= dialogLines.Length)
                     {
+                        //Habilita o Dialogo
                         dialogBox.SetActive(false);
 
-                        //Habilita o movimento do Player
-                        PlayerController.instance.canMove = true;
+                        //Indica que o Player não está em dialogo
+                        GameManager.instance.dialogActive = false;
                     }
                     else
                     {
+                        //Verifica se é nome
                         checkIfName();
 
+                        //Display do texto
                         dialogText.text = dialogLines[currentLine];
                     }
                 }
                 else
                 {
+                    //Indica que não é o primeiro click
                     justStarted = false;
                 }
                 
@@ -71,23 +75,28 @@ public class DialogManager : MonoBehaviour
         //Set Inicio
         currentLine = 0;
 
+        //Verifica se é nome
         checkIfName();
 
+        //Mostra o texto
         dialogText.text = dialogLines[currentLine];
         //Habilita DialogBox
         dialogBox.SetActive(true);
         justStarted = true;
-
+        //Mostra a box de nome se o objeto for uma pessoa
         nameBox.SetActive(isPerson);
-        //Stop o Player
-        PlayerController.instance.canMove = false;
+        //Indica que o player está em dialogo
+        GameManager.instance.dialogActive = true;
     }
 
     public void checkIfName()
     {
+        //Se o texto começa co n-, indica que é nome
         if (dialogLines[currentLine].StartsWith("n-"))
         {
+            //Pega o nome do NPC ou Player
             nameText.text = dialogLines[currentLine].Replace("n-","");
+            // Passa para a proxima linha
             currentLine++;
         }
     }
