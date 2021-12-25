@@ -21,7 +21,8 @@ public class DialogActivator : MonoBehaviour
     void Update()
     {
         //Verifica se o DialogBox pode ser exibido
-        if(canActivate && Input.GetButtonDown("Fire1") && !DialogManager.instance.dialogBox.activeInHierarchy)
+        if(canActivate && Input.GetButtonDown("Fire1") && !DialogManager.instance.dialogBox.activeInHierarchy 
+            && !GameManager.instance.gameMenuOpen)
         {
             DialogManager.instance.ShowDialog(lines, isPerson);
         }
@@ -29,7 +30,7 @@ public class DialogActivator : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //Verifica se o objeto que entrou é o Player
+        //Verifica se o objeto que entrou ï¿½ o Player
         if(other.tag == "Player")
         {
             canActivate = true;
@@ -38,7 +39,7 @@ public class DialogActivator : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        //Verifica se o objeto que saiu é o Player
+        //Verifica se o objeto que saiu ï¿½ o Player
         if (other.tag == "Player")
         {
             canActivate = false;
