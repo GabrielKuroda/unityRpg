@@ -180,4 +180,12 @@ public class GameMenu : MonoBehaviour
         itemName.text = activeItem.itemName;
         itemDescription.text = activeItem.description;
     }
+
+    public void DiscardItem(){
+        //Verifica se há item selecionado
+        if(activeItem != null){
+            //Chama a função para remover o item
+            GameManager.instance.RemoveItem(activeItem.itemName);
+        }
+    }
 }

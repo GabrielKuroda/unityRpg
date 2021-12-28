@@ -31,6 +31,15 @@ public class GameManager : MonoBehaviour
             //Autoriza Movimento do player
             PlayerController.instance.canMove = true;
         }
+
+        if(Input.GetKeyDown(KeyCode.J)){
+            AddItem("Iron Armor");
+            AddItem("BlaBla");
+            AddItem("Mana Potion");
+
+            RemoveItem("Health Potion");
+            RemoveItem("Blip");
+        }
     }
 
     public Item GetItemDetails(string itemToGrab){
@@ -65,6 +74,78 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    public void AddItem(string itemToAdd){
+        int newItemPosition = 0;
+        bool foundSpace = false;
+
+        //Percorre o Inventario do Player
+        for(int i = 0; i < itemsHeld.Length; i++){
+            //Verifica por um espaço vazio ou Item igual
+            if(itemsHeld[i] == "" || itemsHeld[i] == itemToAdd){
+                //Set na posição que o item vai ficar
+                newItemPosition = i;
+                foundSpace = true;
+                break;
+            }
+        }
+        
+        //Verifica se encontrou um espaço para o item
+        if(foundSpace){
+            bool itemExists = false;
+            //Percorre os Items do jogo
+            for(int i =0; i < refereceItems.Length; i++){
+                //Verifica se o Item existe
+                if(refereceItems[i].itemName == itemToAdd){
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            if(itemExists){
+                //Adiciona um Item ao inventário
+                itemsHeld[newItemPosition] = itemToAdd;
+                numberOfItems[newItemPosition]++;
+            }else{
+                //Log de Erro
+                Debug.LogError(itemToAdd + " Does not Exist!!");
+            }
+        }
+        //Atualiza o Menu
+        GameMenu.instance.ShowItems();
+
+    }
+
+    public void RemoveItem(string itemToRemove){
+        bool foundItem = false;
+        int itemPosition = 0;
+
+        //Percorre o Inventario do Player
+        for(int i = 0; i < itemsHeld.Length; i++){
+            //Verifica se o Item está no inventario
+            if(itemsHeld[i] == itemToRemove){
+                foundItem = true;
+                itemPosition = i;
+                break;
+            }
+        }
+
+        //Verifica se o Item foi encontrado
+        if(foundItem){
+            //Diminui a Quantidade de item
+            numberOfItems[itemPosition]--;
+            //Verifica se a quantidade é 0
+            if(numberOfItems[itemPosition] <= 0){
+                //Retira o Item
+                itemsHeld[itemPosition] = "";
+            }
+            //Atualiza o Menu
+            GameMenu.instance.ShowItems();
+        }else{
+            //Log Erro
+            Debug.LogError("Couldn't Find "+ itemToRemove);
         }
     }
 }
