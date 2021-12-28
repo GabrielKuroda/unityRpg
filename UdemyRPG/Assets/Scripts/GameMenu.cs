@@ -16,11 +16,17 @@ public class GameMenu : MonoBehaviour
     public GameObject[] statusButtons;
     public Text statusName, statusHp,statusMp,statusStr,statusDef,statusWpnEqpd,statusWpnPwr,statusArmrEqpd,statusArmrPwr,statusExp;
     public Image statusImage;
+    public ItemButton[] itemButtons;
+    public string selectedItem;
+    public Item activeItem;
+    public Text itemName, itemDescription, useButtonText;
+
+    public static GameMenu instance;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
@@ -134,5 +140,44 @@ public class GameMenu : MonoBehaviour
         statusArmrPwr.text = playerStats[selected].armrPwr.ToString();
         statusExp.text = (playerStats[selected].expToNextLevel[playerStats[selected].playerLevel] - playerStats[selected].currentEXP).ToString();
         statusImage.sprite = playerStats[selected].charImage;
+    }
+
+    public void ShowItems(){
+        //Organiza os items
+        GameManager.instance.SortItems();
+        //Percorre os botões de Items
+        for(int i = 0; i < itemButtons.Length; i++){
+            //Deifine os valores dos btns
+            itemButtons[i].buttonValue = i;
+            //Verifica se há Item para mostrar
+            if(GameManager.instance.itemsHeld[i] != ""){
+                //Torna o Item Ativo no menu
+                itemButtons[i].buttonImage.gameObject.SetActive(true);
+                //PEga a Sprite do Item
+                itemButtons[i].buttonImage.sprite = GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[i]).itemSprite;
+                //Pega a Quantidade do item
+                itemButtons[i].amountText.text = GameManager.instance.numberOfItems[i].ToString();
+            }else{
+                //Desativa o Item
+                itemButtons[i].buttonImage.gameObject.SetActive(false);
+                itemButtons[i].amountText.text = "";
+            }
+        }
+    }
+
+    public void SelectItem(Item newItem){
+        activeItem = newItem;
+        //Verifica se é Item
+        if(activeItem.isItem){
+            //Muda o nome do Botão
+            useButtonText.text = "Use";
+        }
+        //Verifica se é Armor ou Weapon
+        if(activeItem.isArmor || activeItem.isWeapon){
+            useButtonText.text = "Equip";
+        }
+        //Carrega as infos do Item
+        itemName.text = activeItem.itemName;
+        itemDescription.text = activeItem.description;
     }
 }
