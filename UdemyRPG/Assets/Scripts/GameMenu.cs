@@ -21,6 +21,9 @@ public class GameMenu : MonoBehaviour
     public Item activeItem;
     public Text itemName, itemDescription, useButtonText;
 
+    public GameObject itemCharChoiceMenu;
+    public Text[] itemCharChoiceNames;
+
     public static GameMenu instance;
 
     // Start is called before the first frame update
@@ -95,6 +98,8 @@ public class GameMenu : MonoBehaviour
                 windows[i].SetActive(false);
             }
         }
+        //Fecha o Menu de escolha de uso de items
+        itemCharChoiceMenu.SetActive(false);
     }
 
     public void CloseMenu(){
@@ -107,6 +112,8 @@ public class GameMenu : MonoBehaviour
         theMenu.SetActive(false);
         //Indica que o Menu não está aberto
         GameManager.instance.gameMenuOpen = false;
+        //Fecha o Menu de escolha de uso de items
+        itemCharChoiceMenu.SetActive(false);
     }
 
     public void OpenStatus(){
@@ -187,5 +194,29 @@ public class GameMenu : MonoBehaviour
             //Chama a função para remover o item
             GameManager.instance.RemoveItem(activeItem.itemName);
         }
+    }
+
+    public void OpenItemCharChoice(){
+        if(activeItem != null){
+            //Ativa o Menu de escolha
+            itemCharChoiceMenu.SetActive(true);
+            //Set as informações dos char que podem usar o item
+            for(int i = 0; i < itemCharChoiceNames.Length; i++){
+                itemCharChoiceNames[i].text = GameManager.instance.playerStats[i].charName;
+                itemCharChoiceNames[i].transform.parent.gameObject.SetActive(GameManager.instance.playerStats[i].gameObject.activeInHierarchy);
+            }
+        }
+    }
+
+    public void CloseItemCharChoice(){
+        //Fecha o Menu de escolha
+        itemCharChoiceMenu.SetActive(false);
+    }
+
+    public void UseItem(int selectChar){
+        //Chama a função de usar Items
+        activeItem.Use(selectChar);
+        //Fecha o menu de escolha de Char
+        CloseItemCharChoice();
     }
 }

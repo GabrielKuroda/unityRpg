@@ -121,10 +121,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 635
-  m_MinSize: {x: 910, y: 442}
-  m_MaxSize: {x: 22005, y: 10021}
+  m_MinSize: {x: 909, y: 421}
+  m_MaxSize: {x: 22004, y: 10000}
   vertical: 0
-  controlID: 3719
+  controlID: 2598
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -198,10 +198,10 @@ MonoBehaviour:
     y: 0
     width: 536
     height: 635
-  m_MinSize: {x: 202, y: 442}
-  m_MaxSize: {x: 4002, y: 8042}
+  m_MinSize: {x: 202, y: 421}
+  m_MaxSize: {x: 4002, y: 8021}
   vertical: 1
-  controlID: 3720
+  controlID: 2559
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -398,9 +398,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: bcbbffff92c0ffff12c3ffff52c3ffff48fbffff
+      m_SelectedIDs: cefaffff
+      m_LastClickedID: -1330
+      m_ExpandedIDs: 08e5ffff0ee5ffff16e5ffff96e7ffffd6e7ffffdafaffff48fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -462,22 +462,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Udemy RPG Assets/Art/UI
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Udemy RPG Assets/Art/UI
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Gabriel Kuroda\Desktop\unityRpg\UdemyRPG
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 644d0000
-    m_LastClickedID: 19812
-    m_ExpandedIDs: 000000004c4d00004e4d000000ca9a3b
+    m_SelectedIDs: 1c770000
+    m_LastClickedID: 30492
+    m_ExpandedIDs: 00000000ba4d0000bc4d0000e64d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -505,7 +505,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004c4d00004e4d000000ca9a3b
+    m_ExpandedIDs: 00000000ba4d0000bc4d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -557,7 +557,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 198}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 110
@@ -597,9 +597,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 969.03357, y: 154.2016, z: 0}
+    m_Target: {x: 544.7809, y: 890.92645, z: -4.615914}
     speed: 2
-    m_Value: {x: 969.03357, y: 154.2016, z: 0}
+    m_Value: {x: 544.7809, y: 890.92645, z: -4.615914}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -650,9 +650,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 157.72308
+    m_Target: 96.049194
     speed: 2
-    m_Value: 157.72308
+    m_Value: 96.049194
   m_Ortho:
     m_Target: 1
     speed: 2
