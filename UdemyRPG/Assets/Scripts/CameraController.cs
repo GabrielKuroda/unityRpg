@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Pega a Posição do alvo
+        //Pega a Posiï¿½ï¿½o do alvo
         target = PlayerController.instance.transform;
         //target = FindObjectOfType<PlayerController>().transform;  
 
@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour
     // LateUpdate is called once per frame after Update
     void LateUpdate()
     {
-        //Set na posição da camera
+        //Set na posiï¿½ï¿½o da camera
         transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
 
         //Mantem a Camera dentro dos limites do mapa

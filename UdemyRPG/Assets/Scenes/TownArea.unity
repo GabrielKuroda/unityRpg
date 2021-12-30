@@ -6792,6 +6792,83 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1001 &1838573143
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1580292301, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580292301, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.174179
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404503283926544840, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: areaToLoad
+      value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404503283926544840, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: areaTransitionName
+      value: Shop-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404503283926544853, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_Name
+      value: Area Exit (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
 --- !u!1001 &1910751653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21244,93 +21321,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: itemsHeld.Array.size
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: itemsHeld.Array.data[4]
-      value: Health Potion
-      objectReference: {fileID: 0}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: itemsHeld.Array.data[7]
-      value: Iron Sword
-      objectReference: {fileID: 0}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: itemsHeld.Array.data[12]
-      value: Wooden Sword
-      objectReference: {fileID: 0}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: itemsHeld.Array.data[22]
-      value: Leather Armor
-      objectReference: {fileID: 0}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: itemsHeld.Array.data[28]
-      value: Mana Potion
-      objectReference: {fileID: 0}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: numberOfItems.Array.size
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: refereceItems.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: numberOfItems.Array.data[4]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: numberOfItems.Array.data[7]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: refereceItems.Array.data[0]
-      value: 
-      objectReference: {fileID: 5880311459091655437, guid: d5713ce20e211a845aa1d372e0f28f45, type: 3}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: refereceItems.Array.data[1]
-      value: 
-      objectReference: {fileID: 4379831133369347657, guid: b62322e008b13e44fad9f9a8f768e180, type: 3}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: refereceItems.Array.data[2]
-      value: 
-      objectReference: {fileID: 1053727021903721462, guid: 7e2a40bc2adc2fb4abb8183bc245078f, type: 3}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: refereceItems.Array.data[3]
-      value: 
-      objectReference: {fileID: 6263822739007802235, guid: 48eb31abf2062cf418b191ed0cea6e49, type: 3}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: refereceItems.Array.data[4]
-      value: 
-      objectReference: {fileID: 6576467113025635566, guid: cbe204d58dd1d404296a98e038b1c8a1, type: 3}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: refereceItems.Array.data[5]
-      value: 
-      objectReference: {fileID: 2462653511624321147, guid: b33fdd35610fd5b4496e4002c23af70d, type: 3}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: numberOfItems.Array.data[12]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: numberOfItems.Array.data[22]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5399780015320385971, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: numberOfItems.Array.data[28]
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6011919017340860534, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
       propertyPath: m_Name
       value: GameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6355245490875331809, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: charName
-      value: Tim
-      objectReference: {fileID: 0}
-    - target: {fileID: 8455624235751047093, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
-      propertyPath: charName
-      value: Woody
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}

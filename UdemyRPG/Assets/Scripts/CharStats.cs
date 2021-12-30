@@ -39,10 +39,7 @@ public class CharStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Metodo de teste, e como reconhecer outros inputs
-        if(Input.GetKeyDown(KeyCode.K)){
-            AddExp(1000);
-        }
+        
     }
 
     public void AddExp(int expToAdd){

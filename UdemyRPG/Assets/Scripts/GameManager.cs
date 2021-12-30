@@ -7,10 +7,12 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public CharStats[] playerStats;
-    public bool gameMenuOpen, dialogActive, fadingBetweenAreas;
+    public bool gameMenuOpen, dialogActive, fadingBetweenAreas, shopActive;
     public string[] itemsHeld;
     public int[] numberOfItems;
     public Item[] refereceItems;
+
+    public int currentGold;
 
     // Start is called before the first frame update
     void Start()
@@ -26,21 +28,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //Verifica situação do Menu, Load e Sialogo
-        if(gameMenuOpen || dialogActive || fadingBetweenAreas){
+        if(gameMenuOpen || dialogActive || fadingBetweenAreas || shopActive){
             //Impede movimento do Player
             PlayerController.instance.canMove = false;
         }else{
             //Autoriza Movimento do player
             PlayerController.instance.canMove = true;
-        }
-
-        if(Input.GetKeyDown(KeyCode.J)){
-            AddItem("Iron Armor");
-            AddItem("BlaBla");
-            AddItem("Mana Potion");
-
-            RemoveItem("Health Potion");
-            RemoveItem("Blip");
         }
     }
 

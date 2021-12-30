@@ -25,6 +25,7 @@ public class GameMenu : MonoBehaviour
     public Text[] itemCharChoiceNames;
 
     public static GameMenu instance;
+    public Text goldText;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,7 @@ public class GameMenu : MonoBehaviour
     {
         //Verifica se botão foi apertado para abrir/fechar menu
         if(Input.GetButtonDown("Fire2") && !GameManager.instance.fadingBetweenAreas 
-            && !GameManager.instance.dialogActive){
+            && !GameManager.instance.dialogActive && !GameManager.instance.shopActive){
             if(theMenu.activeInHierarchy){
                 //Função para fechar o menu
                 CloseMenu();
@@ -82,6 +83,9 @@ public class GameMenu : MonoBehaviour
                 charStatHolder[i].SetActive(false);
             }
         }
+
+        //Set na quantidade de Gold
+        goldText.text = GameManager.instance.currentGold.ToString() + "g";
     }
 
     public void ToggleWindow(int windowNumber){
