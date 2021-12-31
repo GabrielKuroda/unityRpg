@@ -27,6 +27,8 @@ public class GameMenu : MonoBehaviour
     public static GameMenu instance;
     public Text goldText;
 
+    public GameObject menuInfoItem, menuActionItem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -100,6 +102,12 @@ public class GameMenu : MonoBehaviour
             }else{
                 //Fecha as outras Janelas
                 windows[i].SetActive(false);
+                //Verifica se é a tela de Item
+                if(windowNumber == 0){
+                    //Fecha as infos e actions
+                    menuInfoItem.SetActive(false);
+                    menuActionItem.SetActive(false);
+                }
             }
         }
         //Fecha o Menu de escolha de uso de items
@@ -177,6 +185,10 @@ public class GameMenu : MonoBehaviour
     }
 
     public void SelectItem(Item newItem){
+        //Abre as Infos e Ações do Item
+        menuInfoItem.SetActive(true);
+        menuActionItem.SetActive(true);
+        //Pega o Item
         activeItem = newItem;
         //Verifica se é Item
         if(activeItem.isItem){
