@@ -21277,6 +21277,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2005357973740720889, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
+      propertyPath: questMarkerNames.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005357973740720889, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
+      propertyPath: questMarkerNames.Array.data[1]
+      value: Fight the Demon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005357973740720889, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
+      propertyPath: questMarkerNames.Array.data[2]
+      value: Enter the Cave
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005357973740720889, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
+      propertyPath: questMarkerNames.Array.data[3]
+      value: Quest Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005357973740720889, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
+      propertyPath: questMarkerNames.Array.data[4]
+      value: Save the World
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005357973740720889, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
+      propertyPath: questMarkersComplete.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2175424888131878890, guid: d411b4d0de80ddc4886e9218aa5a70b6, type: 3}
       propertyPath: m_RootOrder
       value: 7
