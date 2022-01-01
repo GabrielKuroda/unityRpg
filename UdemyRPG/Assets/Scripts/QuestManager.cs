@@ -24,6 +24,14 @@ public class QuestManager : MonoBehaviour
             Debug.Log(CheckIfComplete("Quest Test"));
             MarkQuestComplete("Quest Test");
         }
+
+        if(Input.GetKeyDown(KeyCode.O)){
+            SaveQuestData();
+        }
+
+        if(Input.GetKeyDown(KeyCode.P)){
+            LoadQuestData();
+        }
     }
 
     public int GetQuestNumber(string questToFind){
@@ -72,6 +80,38 @@ public class QuestManager : MonoBehaviour
             for(int i = 0; i < questObjects.Length; i++){
                 //Verifica se a Quest está completa
                 questObjects[i].CheckCompletion();
+            }
+        }
+    }
+
+    public void SaveQuestData(){
+        //Percorre as Quests do Jogo
+        for(int i = 0; i < questMarkerNames.Length; i++){
+            //Verifica o status da Quest
+            if(questMarkersComplete[i]){
+                //Salva Quest completa
+                PlayerPrefs.SetInt("QuestMarker_" + questMarkerNames[i],1);
+            }else{
+                //Salva Quest incompleta
+                PlayerPrefs.SetInt("QuestMarker_" + questMarkerNames[i],0);
+            }
+        }
+    }
+
+    public void LoadQuestData(){
+        //Percorre as Quests do Jogo
+        for(int i = 0; i < questMarkerNames.Length; i++){
+            int valueToSet = 0;
+            //Verifica se há save para está quest
+            if(PlayerPrefs.HasKey("QuestMarker_" + questMarkerNames[i])){
+                //Pega o Save
+                valueToSet = PlayerPrefs.GetInt("QuestMarker_" + questMarkerNames[i]);
+            }
+            //Seta o valor do save na quest
+            if(valueToSet == 0){
+                questMarkersComplete[i] = false;
+            }else{
+                questMarkersComplete[i] = true;
             }
         }
     }

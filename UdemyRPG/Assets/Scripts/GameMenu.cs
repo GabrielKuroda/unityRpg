@@ -235,4 +235,9 @@ public class GameMenu : MonoBehaviour
         //Fecha o menu de escolha de Char
         CloseItemCharChoice();
     }
+
+    public void SaveGame(){
+        GameManager.instance.saveData();
+        QuestManager.instance.SaveQuestData();
+    }
 }
