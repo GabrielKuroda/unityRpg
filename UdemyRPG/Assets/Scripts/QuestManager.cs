@@ -20,6 +20,10 @@ public class QuestManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Q)){
+            Debug.Log(CheckIfComplete("Quest Test"));
+            MarkQuestComplete("Quest Test");
+        }
     }
 
     public int GetQuestNumber(string questToFind){
@@ -48,10 +52,27 @@ public class QuestManager : MonoBehaviour
     {
         //MArca a quest como Completa
         questMarkersComplete[GetQuestNumber(questToMark)] = true;
+        //Atualiza Objetos
+        UpdateLocalQuestObjects();
     }
 
     public void MarkQuestIncomplete(string questToMark){
         //MArca como incompleta
         questMarkersComplete[GetQuestNumber(questToMark)] = false;
+        //Atualiza Objetos
+        UpdateLocalQuestObjects();
+    }
+
+    public void UpdateLocalQuestObjects(){
+        //Pega todos os Objetos que contenham o Script QuestObjectActivator
+        QuestObjectActivator[] questObjects = FindObjectsOfType<QuestObjectActivator>();
+
+        //Verifica se há objetos
+        if(questObjects.Length > 0){
+            for(int i = 0; i < questObjects.Length; i++){
+                //Verifica se a Quest está completa
+                questObjects[i].CheckCompletion();
+            }
+        }
     }
 }

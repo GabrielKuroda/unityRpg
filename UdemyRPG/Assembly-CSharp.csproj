@@ -39,9 +39,11 @@
      <Compile Include="Assets\Scripts\PlayerLoader.cs" />
      <Compile Include="Assets\Scripts\ItemButton.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\QuestManager.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\AreaEntrance.cs" />
      <Compile Include="Assets\Scripts\AreaExit.cs" />
+     <Compile Include="Assets\Scripts\QuestObjectActivator.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\GameMenu.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />
@@ -53,7 +55,7 @@
      <Compile Include="Assets\Scripts\UIFade.cs" />
      <Compile Include="Assets\Scripts\DialogManager.cs" />
      <Compile Include="Assets\Scripts\EssencialsLoader.cs" />
-     <Compile Include="Assets\Scripts\QuestManager.cs" />
+     <Compile Include="Assets\Scripts\QuestMarker.cs" />
      <None Include="Assets\Udemy RPG Assets\Licence.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.24f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

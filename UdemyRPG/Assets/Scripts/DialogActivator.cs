@@ -11,6 +11,10 @@ public class DialogActivator : MonoBehaviour
 
     public bool isPerson = true;
 
+    public bool ShouldActivateQuest;
+    public bool markComplete;
+    public string questToMark;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +29,8 @@ public class DialogActivator : MonoBehaviour
             && !GameManager.instance.gameMenuOpen)
         {
             DialogManager.instance.ShowDialog(lines, isPerson);
+            //Ativa a Quest
+            DialogManager.instance.ShouldActivateQuestAtEnd(questToMark, markComplete);
         }
     }
 
