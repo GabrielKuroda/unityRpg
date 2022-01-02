@@ -5458,6 +5458,83 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &835132494
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1580292301, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580292301, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.225
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.174179
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374412771681667458, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404503283926544840, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: areaToLoad
+      value: Cave
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404503283926544840, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: areaTransitionName
+      value: Cave-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404503283926544853, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
+      propertyPath: m_Name
+      value: Area Exit (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a6af18b3ae6165843bacb9a832cbd562, type: 3}
 --- !u!1 &950669642
 GameObject:
   m_ObjectHideFlags: 0
