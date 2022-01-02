@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e577ba3914d5ed142ac288bf3fc4de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charName: Woody
+  charName: Ralph
   playerLevel: 3
   currentEXP: 543
   expToNextLevel: 
@@ -226,7 +226,7 @@ MonoBehaviour:
   - {fileID: 6263822739007802235, guid: 48eb31abf2062cf418b191ed0cea6e49, type: 3}
   - {fileID: 6576467113025635566, guid: cbe204d58dd1d404296a98e038b1c8a1, type: 3}
   - {fileID: 2462653511624321147, guid: b33fdd35610fd5b4496e4002c23af70d, type: 3}
-  currentGold: 0
+  currentGold: 100
 --- !u!114 &2005357973740720889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +239,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8448d4359b816484a927e7e5c068e9a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  questMarkerNames:
+  - 
+  - Fight the Demon
+  - Enter the Cave
+  - Quest Test
+  - Save the World
+  questMarkersComplete: 
 --- !u!1 &6355245490875331822
 GameObject:
   m_ObjectHideFlags: 0

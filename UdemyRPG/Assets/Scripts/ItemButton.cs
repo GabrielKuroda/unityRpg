@@ -24,6 +24,8 @@ public class ItemButton : MonoBehaviour
         if(GameMenu.instance.theMenu.activeInHierarchy){
             //Verifica se há um Item no botão
             if(GameManager.instance.itemsHeld[buttonValue] != ""){
+                //Toca o SFX
+                GameMenu.instance.PlayButtonSound();
                 //Chama a função que selecionara o item
                 GameMenu.instance.SelectItem(GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[buttonValue]));
             }
@@ -34,6 +36,8 @@ public class ItemButton : MonoBehaviour
             if(Shop.instance.itemsForSale[buttonValue] != ""){
                 //Verifia se é Mnu de Buy
                 if(Shop.instance.buyMenu.activeInHierarchy){
+                    //Toca o SFX
+                    GameMenu.instance.PlayButtonSound();
                     Shop.instance.SelectBuyItem(GameManager.instance.GetItemDetails(Shop.instance.itemsForSale[buttonValue]));
                 }
             }
@@ -41,6 +45,8 @@ public class ItemButton : MonoBehaviour
             if(GameManager.instance.itemsHeld[buttonValue] != ""){
                 //Verifica se é Menu de Sell
                 if(Shop.instance.sellMenu.activeInHierarchy){
+                    //Toca o SFX
+                    GameMenu.instance.PlayButtonSound();
                     Shop.instance.SelectSellItem(GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[buttonValue]));
                 }
             }

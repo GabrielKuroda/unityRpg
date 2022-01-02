@@ -52,6 +52,9 @@ public class GameMenu : MonoBehaviour
                 //Indica que o Menu está aberto
                 GameManager.instance.gameMenuOpen = true;
             }
+
+            //Toca o SFX
+            AudioManager.instance.PlaySFX(5);
         }
     }
 
@@ -207,8 +210,22 @@ public class GameMenu : MonoBehaviour
     public void DiscardItem(){
         //Verifica se há item selecionado
         if(activeItem != null){
+            int itemPosition = 0;
+            //Pega a posição do item no Inventario
+            for(int i = 0; i < GameManager.instance.itemsHeld.Length; i++){
+                if(GameManager.instance.itemsHeld[i] == activeItem.itemName){
+                    itemPosition = i;
+                }
+            }
             //Chama a função para remover o item
             GameManager.instance.RemoveItem(activeItem.itemName);
+            //Verifica se ainda tem esse tipo de item no inventario
+            if(GameManager.instance.itemsHeld[itemPosition] == "" || 
+                GameManager.instance.itemsHeld[itemPosition] != activeItem.itemName){
+                //Fecha as infos e action
+                menuInfoItem.SetActive(false);
+                menuActionItem.SetActive(false);
+            }
         }
     }
 
@@ -237,7 +254,13 @@ public class GameMenu : MonoBehaviour
     }
 
     public void SaveGame(){
+        //Salva o Jogo
         GameManager.instance.saveData();
         QuestManager.instance.SaveQuestData();
+    }
+
+    public void PlayButtonSound(){
+        //Toca o SFX
+        AudioManager.instance.PlaySFX(4);
     }
 }

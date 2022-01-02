@@ -39,6 +39,8 @@ public class Shop : MonoBehaviour
 
     public void OpenShop()
     {
+        //Toca o SFX
+        AudioManager.instance.PlaySFX(5);
         //Abre Shop Menu
         shopMenu.SetActive(true);
         //Informa que o Shop está aberto
