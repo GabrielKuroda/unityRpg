@@ -15,6 +15,10 @@ public class BattleManager : MonoBehaviour
     public BattleChar[] enemyPrefabs;
     public List<BattleChar> activeBattlers = new List<BattleChar>();
 
+    public int currentTurn;
+    public bool turnWaiting;
+    public GameObject uiButtonsHolder;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +32,26 @@ public class BattleManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.T)){
             BattleStart(new string[] {"Eyeball","Spider","Skeleton"});
+        }
+        //verifica se está em batalha
+        if(battleActive){
+            //Verifica se está em aguardando um turno
+            if(turnWaiting){
+                //Verifica se é o turno do PLayer
+                if(activeBattlers[currentTurn].isPlayer){
+                    //Ativa menu de escolha
+                    uiButtonsHolder.SetActive(true);
+                }else{
+                    //Destaiva menu de escolha
+                    uiButtonsHolder.SetActive(false);
+
+                    //Enemy should Attack , ToDo
+                }
+            }
+
+            if(Input.GetKeyDown(KeyCode.N)){
+                NextTurn();
+            }
         }
     }
 
@@ -89,6 +113,66 @@ public class BattleManager : MonoBehaviour
                     }
                 }
             }
+            //Indica que está em um turno
+            turnWaiting = true;
+            //Indica que é o 1ºTurno
+            currentTurn = 0;
+        }
+    }
+
+    public void NextTurn(){
+        //Add turno
+        currentTurn++;
+        //Verifica se passou a qtd de turnos necessarios
+        if(currentTurn >= activeBattlers.Count){
+            //Retorna os turnos
+            currentTurn = 0;
+        }
+        //Indica estar em turno
+        turnWaiting = true;
+        //Atualiza batalha
+        UpdateBattle();
+    }
+
+    public void UpdateBattle(){
+        //Indicadores
+        bool allEnemiesDead = true;
+        bool allPlayersDead = true;
+        //Passa por todos os enemies e players
+        for(int i = 0; i < activeBattlers.Count; i++){
+            //Verifica se o HP está abaixo de 0
+            if(activeBattlers[i].currentHp < 0){
+                //Indica como 0
+                activeBattlers[i].currentHp = 0;
+            }
+            //Verifica se o HP é 0
+            if(activeBattlers[i].currentHp == 0){
+                //Handle dead Battler
+            }else{
+                //Verifica se é player ou não
+                if(activeBattlers[i].isPlayer){
+                    //Indica que há players vivos
+                    allPlayersDead = false;
+                }else{
+                    //Indica que há enimies vivos
+                    allEnemiesDead = false;
+                }
+            }
+        }
+        
+        //Verifica se um dos lados acabou
+        if(allEnemiesDead || allPlayersDead){
+            //Verifica se todos os enemies morreram
+            if(allEnemiesDead){
+                //End battle and victory
+            }else{
+                //End battle failure
+            }
+            //Desativa batalha
+            battleScene.SetActive(false);
+            //Indica que não está mais em batalha
+            GameManager.instance.battleActive = false;
+            battleActive = false;
         }
     }
 }
