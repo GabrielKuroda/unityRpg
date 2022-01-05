@@ -45,7 +45,8 @@ public class BattleManager : MonoBehaviour
                     //Destaiva menu de escolha
                     uiButtonsHolder.SetActive(false);
 
-                    //Enemy should Attack , ToDo
+                    //Enemy Attack
+                    StartCoroutine(EnemyMoveCo());
                 }
             }
 
@@ -174,5 +175,36 @@ public class BattleManager : MonoBehaviour
             GameManager.instance.battleActive = false;
             battleActive = false;
         }
+    }
+
+    //Cria uma rotina
+    public IEnumerator EnemyMoveCo(){
+        //Indica não estar aguardando
+        turnWaiting = false;
+        //Espera 1s
+        yield return new WaitForSeconds(1f);
+        //Ataca
+        EnemyAttack();
+        //Espera 1s
+        yield return new WaitForSeconds(1f);
+        //Proxim turno
+        NextTurn();
+    }
+
+    public void EnemyAttack(){
+        //Cria uma lista só de Players
+        List<int> players = new List<int>();
+        //Percorre todos os Personagens na batalha
+        for(int i = 0; i < activeBattlers.Count; i++){
+            //Verifica se é player e se esta vivo
+            if(activeBattlers[i].isPlayer && activeBattlers[i].currentHp > 0){
+                //Add na lista
+                players.Add(i);
+            }
+        }
+        //Escolhe um player aleatorio
+        int selectedTarget = players[Random.Range(0,players.Count)];
+        //Da o dano
+        activeBattlers[selectedTarget].currentHp -= 30;
     }
 }
