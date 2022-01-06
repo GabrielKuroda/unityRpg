@@ -19,6 +19,9 @@ public class BattleManager : MonoBehaviour
     public bool turnWaiting;
     public GameObject uiButtonsHolder;
 
+    public BattleMove[] movesList;
+    public GameObject enemyAttackEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -89,7 +92,7 @@ public class BattleManager : MonoBehaviour
                             activeBattlers[i].currentMP = thePlayer.currentMP;
                             activeBattlers[i].maxMP = thePlayer.maxMP;
                             activeBattlers[i].strength = thePlayer.strength;
-                            activeBattlers[i].defense = thePlayer.defence;
+                            activeBattlers[i].defence = thePlayer.defence;
                             activeBattlers[i].wpnPower = thePlayer.wpnPwr;
                             activeBattlers[i].armrPower = thePlayer.armrPwr;
                         }
@@ -204,7 +207,36 @@ public class BattleManager : MonoBehaviour
         }
         //Escolhe um player aleatorio
         int selectedTarget = players[Random.Range(0,players.Count)];
-        //Da o dano
-        activeBattlers[selectedTarget].currentHp -= 30;
+        //Escolhe um attack
+        int selectAttack = Random.Range(0, activeBattlers[currentTurn].movesAvailable.Length);
+        int movePower = 0;
+        //Percorre a lista de attacks
+        for(int i = 0; i < movesList.Length; i++){
+            //Verifica se é o Attack
+            if(movesList[i].moveName == activeBattlers[currentTurn].movesAvailable[selectAttack]){
+                //Instancia
+                Instantiate(movesList[i].theEffect, activeBattlers[selectedTarget].transform.position, activeBattlers[selectedTarget].transform.rotation);
+                movePower = movesList[i].movePower;
+            }
+        }
+        //Chama o Efeito de show Enemy
+        Instantiate(enemyAttackEffect, activeBattlers[currentTurn].transform.position, activeBattlers[currentTurn].transform.rotation);
+        //da o dano
+        DealDamage(selectedTarget,movePower);
+    }
+
+    public void DealDamage(int target, int movePower){
+        //PEga a força do atacante
+        float atkPwr = activeBattlers[currentTurn].strength + activeBattlers[currentTurn].wpnPower;
+        //PEga a defesa do alvo
+        float defPwr = activeBattlers[target].defence + activeBattlers[target].armrPower;
+
+        //Calcula o Dano
+        float damageCalc = (atkPwr / defPwr) * movePower * Random.Range(.9f,1.1f);
+        int damageToGive = Mathf.RoundToInt(damageCalc);
+        //loga
+        Debug.Log(activeBattlers[currentTurn]. charName + " is dealing " + damageCalc + "(" + damageToGive + ") damage to " + activeBattlers[target].charName);
+        //Realiza o dano
+        activeBattlers[target].currentHp -= damageToGive;
     }
 }

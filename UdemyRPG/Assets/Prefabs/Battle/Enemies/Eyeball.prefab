@@ -96,14 +96,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  movesAvailable: []
+  movesAvailable:
+  - Fire
+  - Ice
   charName: Eyeball
   currentHp: 150
   maxHp: 250
   currentMP: 0
   maxMP: 0
-  strength: 5
-  defense: 5
-  wpnPower: 5
+  strength: 20
+  defence: 5
+  wpnPower: 20
   armrPower: 5
   hasDied: 0
