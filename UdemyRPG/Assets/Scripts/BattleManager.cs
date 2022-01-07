@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattleManager : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class BattleManager : MonoBehaviour
 
     public BattleMove[] movesList;
     public GameObject enemyAttackEffect;
+    public DamageNumber theDamageNumber;
+    public Text[] playerNames, playerHP, playerMP;
 
     // Start is called before the first frame update
     void Start()
@@ -121,6 +124,8 @@ public class BattleManager : MonoBehaviour
             turnWaiting = true;
             //Indica que é o 1ºTurno
             currentTurn = 0;
+            //Atualiza os Stats do Player
+            UpdateUIStats();
         }
     }
 
@@ -136,6 +141,8 @@ public class BattleManager : MonoBehaviour
         turnWaiting = true;
         //Atualiza batalha
         UpdateBattle();
+        //Atualiza os Stats do Player
+        UpdateUIStats();
     }
 
     public void UpdateBattle(){
@@ -169,14 +176,24 @@ public class BattleManager : MonoBehaviour
             //Verifica se todos os enemies morreram
             if(allEnemiesDead){
                 //End battle and victory
+                activeBattlers.Clear();
             }else{
                 //End battle failure
+                activeBattlers.Clear();
             }
             //Desativa batalha
             battleScene.SetActive(false);
             //Indica que não está mais em batalha
             GameManager.instance.battleActive = false;
             battleActive = false;
+        }else{
+            while(activeBattlers[currentTurn].currentHp == 0){
+                currentTurn++;
+                Debug.Log(activeBattlers.Count);
+                if(currentTurn >= activeBattlers.Count){
+                    currentTurn = 0;
+                }
+            }
         }
     }
 
@@ -238,5 +255,34 @@ public class BattleManager : MonoBehaviour
         Debug.Log(activeBattlers[currentTurn]. charName + " is dealing " + damageCalc + "(" + damageToGive + ") damage to " + activeBattlers[target].charName);
         //Realiza o dano
         activeBattlers[target].currentHp -= damageToGive;
+        //Instancia indicador de dano
+        Instantiate(theDamageNumber, activeBattlers[target].transform.position, activeBattlers[target].transform.rotation).SetDamage(damageToGive);
+        //Atuliza os Stats dos Players
+        UpdateUIStats();
+    }
+
+    public void UpdateUIStats(){
+        //Percorre os Labels de Stats
+        for(int i = 0; i < playerNames.Length; i++){
+            //Verifica se há + de um personagem na batalha
+            if(activeBattlers.Count > 1){
+                //Verifica se o Personagem é Player
+                if(activeBattlers[i].isPlayer){
+                    //Pega os Dados do Player
+                    BattleChar playerData = activeBattlers[i];
+                    //Set nos dados nas Labels e ativa as labels
+                    playerNames[i].gameObject.SetActive(true);
+                    playerNames[i].text = playerData.charName;
+                    playerHP[i].text = Mathf.Clamp(playerData.currentHp, 0 , int.MaxValue) +"/"+ playerData.maxHp;
+                    playerMP[i].text = playerData.currentMP +"/"+ playerData.maxMP;
+                }else{
+                    //Desativa as labels
+                    playerNames[i].gameObject.SetActive(false);
+                }
+            }else{
+                //Desativa as Labels
+                playerNames[i].gameObject.SetActive(false);
+            }
+        }
     }
 }
