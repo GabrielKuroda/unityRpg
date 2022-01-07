@@ -26,6 +26,10 @@ public class BattleManager : MonoBehaviour
     public Text[] playerNames, playerHP, playerMP;
     public GameObject targetMenu;
     public BattleTargetButton[] targetButtons;
+    public GameObject magicMenu;
+    public BattleMagicSelect[] magicButtons;
+    public BattleNotification battleNotice;
+    public int chanceToFlee = 35;
 
     // Start is called before the first frame update
     void Start()
@@ -178,9 +182,11 @@ public class BattleManager : MonoBehaviour
             //Verifica se todos os enemies morreram
             if(allEnemiesDead){
                 //End battle and victory
+                Debug.Log("Win");
                 activeBattlers.Clear();
             }else{
                 //End battle failure
+                Debug.Log("Loss");
                 activeBattlers.Clear();
             }
             //Desativa batalha
@@ -301,33 +307,83 @@ public class BattleManager : MonoBehaviour
         }
         //Instancia o Efeito no Player
         Instantiate(enemyAttackEffect, activeBattlers[currentTurn].transform.position, activeBattlers[currentTurn].transform.rotation);
-
+        //Da dano
         DealDamage(selectedTarget, movePower);
-
+        //Desativa o Menu de Target
         targetMenu.SetActive(false);
-
+        //Chama proximo turno
         NextTurn();
-        
     }
 
     public void OpenTargetMenu(string moveName){
+        //Abre menu de target
         targetMenu.SetActive(true);
+        //Cria uma lista para armazenar os enemies
         List<int> enemies = new List<int>();
+        //Percorre os personagens em batalha
         for(int i = 0; i < activeBattlers.Count; i++){
+            //Verifica se é Enemy
             if(!activeBattlers[i].isPlayer){
                 enemies.Add(i);
             }
         }
-
+        //Percorre os botões de target
         for(int i = 0; i < targetButtons.Length; i++){
+            //Verifica se o deve criar o botão, com base na qtd de enemies
             if(enemies.Count > i){
+                //Cria o botão
                 targetButtons[i].gameObject.SetActive(true);
                 targetButtons[i].moveName = moveName;
                 targetButtons[i].activeBattlerTarget = enemies[i];
                 targetButtons[i].targetName.text = activeBattlers[enemies[i]].charName;
             }else{
+                //Desativa o botão
                 targetButtons[i].gameObject.SetActive(false);
             }
+        }
+    }
+
+    public void OpenMagicMenu(){
+        //Ativa o menu de magic
+        magicMenu.SetActive(true);
+        //Percorre os botões
+        for(int i = 0; i < magicButtons.Length; i++){
+            //Verifica se o deve criar o botão, com base na qtd de magic do player
+            if(activeBattlers[currentTurn].movesAvailable.Length > i){
+                //Cria o botão
+                magicButtons[i].gameObject.SetActive(true);
+                magicButtons[i].spellName = activeBattlers[currentTurn].movesAvailable[i];
+                magicButtons[i].nameText.text = magicButtons[i].spellName;
+                //Percorre as Abilidades presentes no Jogo
+                for(int j = 0; j < movesList.Length; j++){
+                    //Verifica se a abilidade bate com a do Player
+                    if(movesList[j].moveName == magicButtons[i].spellName){
+                        //Set no Cost da MAgic
+                        magicButtons[i].spellCost = movesList[j].moveCost;
+                        magicButtons[i].costText.text = magicButtons[i].spellCost.ToString();
+                    }
+                }
+            }else{
+                //Desativa a tela de Magic
+                magicButtons[i].gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void Flee(){
+        //Pega um numero entre 0 - 100
+        int fleeSuccess = Random.Range(0,100);
+        //Verifica se o numero está na porcentagem
+        if(fleeSuccess < chanceToFlee){
+            //Termina a Batalha
+            battleActive = false;
+            battleScene.SetActive(false);
+        }else{
+            //Notifica que não conseguiu escapar
+            battleNotice.theText.text = "Couln't Escape!";
+            battleNotice.Activate();
+            //Chama proximo turno
+            NextTurn();
         }
     }
 }
