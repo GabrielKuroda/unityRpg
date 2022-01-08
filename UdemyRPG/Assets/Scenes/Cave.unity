@@ -1177,7 +1177,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 163894152}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -2059,7 +2059,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 236751745}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -3793,7 +3793,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 335037814}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -4018,6 +4018,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &337819022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4168,7 +4180,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 355174460}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -5132,6 +5144,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &462758602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5444,7 +5468,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 475028619}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -5581,6 +5605,18 @@ MonoBehaviour:
       - m_Target: {fileID: 475583439}
         m_TargetAssemblyTypeName: BattleTargetButton, Assembly-CSharp
         m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5804,6 +5840,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1215130762}
         m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
         m_MethodName: OpenTargetItemMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6200,7 +6248,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 551451500}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -6350,7 +6398,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 554033667}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -6567,6 +6615,18 @@ MonoBehaviour:
       - m_Target: {fileID: 576402289}
         m_TargetAssemblyTypeName: BattleMagicSelect, Assembly-CSharp
         m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6821,6 +6881,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &584262387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6962,6 +7034,18 @@ MonoBehaviour:
       - m_Target: {fileID: 609519867}
         m_TargetAssemblyTypeName: BattleMagicSelect, Assembly-CSharp
         m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7220,7 +7304,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 645346764}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -8075,6 +8159,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &745659709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8450,6 +8546,18 @@ MonoBehaviour:
       - m_Target: {fileID: 769825818}
         m_TargetAssemblyTypeName: BattleMagicSelect, Assembly-CSharp
         m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9037,6 +9145,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &790626698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9254,6 +9374,18 @@ MonoBehaviour:
       - m_Target: {fileID: 809995566}
         m_TargetAssemblyTypeName: BattleMagicSelect, Assembly-CSharp
         m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9594,7 +9726,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 848912164}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -10198,7 +10330,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 887019454}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -10868,6 +11000,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &939918599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11195,7 +11339,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 967761324}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -11764,7 +11908,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1007321831}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -12758,7 +12902,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1081441665}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -13333,7 +13477,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1117823284}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -13562,7 +13706,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1123666681}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -13712,7 +13856,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1127740587}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -13926,7 +14070,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1141497284}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -14253,7 +14397,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1157919246}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -14644,6 +14788,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1187314857}
         m_TargetAssemblyTypeName: BattleMagicSelect, Assembly-CSharp
         m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16961,7 +17117,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1208386497}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -17111,7 +17267,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1211926731}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -17339,6 +17495,10 @@ MonoBehaviour:
   - {fileID: 1920519042}
   - {fileID: 1464885238}
   gameOverScene: GameOver
+  rewardXp: 500
+  rewardItems:
+  - Wooden Sword
+  - Iron Armor
 --- !u!4 &1215130763
 Transform:
   m_ObjectHideFlags: 0
@@ -17904,6 +18064,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1268011596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18148,6 +18320,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1277401079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18286,7 +18470,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1281356892}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -18424,6 +18608,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1291688584}
         m_TargetAssemblyTypeName: BattleMagicSelect, Assembly-CSharp
         m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19013,7 +19209,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1349088902}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -19762,6 +19958,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1426416151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20008,6 +20216,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1455161606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20138,6 +20358,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -20454,7 +20686,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1474823869}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -24094,7 +24326,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1555655384}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -24418,7 +24650,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1583672048}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -24900,7 +25132,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1598678333}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -25245,6 +25477,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1612895242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25385,6 +25629,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1215130762}
         m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
         m_MethodName: CancelItemSelectTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25769,7 +26025,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1643012079}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -25919,7 +26175,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1647932710}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -26701,7 +26957,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1682150856}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -26851,7 +27107,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1691102689}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -27071,6 +27327,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1697793966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27195,6 +27463,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1215130762}
         m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
         m_MethodName: Flee
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27405,6 +27685,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1741180347}
         m_TargetAssemblyTypeName: BattleMagicSelect, Assembly-CSharp
         m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28236,7 +28528,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1827503932}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -28542,6 +28834,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1850117936}
         m_TargetAssemblyTypeName: BattleTargetButton, Assembly-CSharp
         m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28859,7 +29163,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1884320038}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -29190,6 +29494,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1920519043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29326,6 +29642,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1215130762}
         m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
         m_MethodName: OpenMagicMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30009,7 +30337,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1972671489}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -30285,7 +30613,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1988492519}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -30500,6 +30828,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1215130762}
         m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
         m_MethodName: CloseItemMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30998,7 +31338,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2045782325}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -31227,7 +31567,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2066582262}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -31547,6 +31887,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2102821063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31688,6 +32040,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2118768896}
         m_TargetAssemblyTypeName: BattleMagicSelect, Assembly-CSharp
         m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31937,6 +32301,18 @@ MonoBehaviour:
           m_StringArgument: Slash
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1215130762}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2120955213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32075,7 +32451,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2132743853}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -32300,7 +32676,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2137674784}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1
@@ -32529,7 +32905,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2145728030}
+      - m_Target: {fileID: 128785331}
         m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
         m_MethodName: Press
         m_Mode: 1

@@ -40,6 +40,9 @@ public class BattleManager : MonoBehaviour
     public Text[] buttonItemTargetText;
     public Button[] buttonItemTarget;
     public string gameOverScene;
+    private bool fleeing;
+    public int rewardXp;
+    public string[] rewardItems;
 
     // Start is called before the first frame update
     void Start()
@@ -204,13 +207,13 @@ public class BattleManager : MonoBehaviour
                 StartCoroutine(EndBattleCo());
             }else{
                 //End battle failure
+                StartCoroutine(GameOverCo());
             }
             //Desativa batalha
             //battleScene.SetActive(false);
             //Indica que não está mais em batalha
             //GameManager.instance.battleActive = false;
-            //battleActive = false;
-            StartCoroutine(GameOverCo());
+            //battleActive = false; 
         }else{
             while(activeBattlers[currentTurn].currentHP == 0){
                 currentTurn++;
@@ -395,6 +398,7 @@ public class BattleManager : MonoBehaviour
             //Termina a Batalha
             //battleActive = false;
             //battleScene.SetActive(false);
+            fleeing = true;
             StartCoroutine(EndBattleCo());
         }else{
             //Notifica que não conseguiu escapar
@@ -555,15 +559,18 @@ public class BattleManager : MonoBehaviour
         //Retorna ao turno 0
         currentTurn = 0;
         //Avisa que batlha acabou
-        GameManager.instance.battleActive = false;
-        /*if(fleeing)
+        //GameManager.instance.battleActive = false;
+        //verifica se a batalha acobou por fuga
+        if(fleeing)
         {
+            //Indica que a batalha acabou
             GameManager.instance.battleActive = false;
             fleeing = false;
         } else
         {
-            BattleReward.instance.OpenRewardScreen(rewardXP, rewardItems);
-        }*/
+            //Chama a tela de Reward
+            BattleReward.instance.OpenRewardScreen(rewardXp, rewardItems);
+        }
         //Volta o som
         AudioManager.instance.PlayBgm(FindObjectOfType<CameraController>().musicToPlay);
     }
@@ -578,5 +585,10 @@ public class BattleManager : MonoBehaviour
         battleScene.SetActive(false);
         //Chama tela de Game over
         SceneManager.LoadScene(gameOverScene);
+    }
+
+    public void PlayButtonSound(){
+        //Toca o SFX
+        AudioManager.instance.PlaySFX(4);
     }
 }
