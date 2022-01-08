@@ -23,6 +23,7 @@ public class BattleItemUse : MonoBehaviour
     }
 
     public IEnumerator ItemUseCo(int charToUseOn){
+        //Utiliza o intem e atualiza inventario e stats
         int used = BattleManager.instance.activeItem.UseInBattle(charToUseOn);
         GameManager.instance.SortItems();
         BattleManager.instance.UpdateItemUIStats();
@@ -30,6 +31,7 @@ public class BattleItemUse : MonoBehaviour
         BattleManager.instance.ShowItems();
         //Espera 1s
         yield return new WaitForSeconds(1f);
+        //Fecha o menu
         if(used == 0){
             BattleManager.instance.CloseItemMenu();
             BattleManager.instance.NextTurn();

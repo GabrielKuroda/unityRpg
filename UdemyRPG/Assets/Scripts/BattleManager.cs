@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class BattleManager : MonoBehaviour
     public Text[] playerItemNames, playerItemHP, playerItemMP;
     public Text[] buttonItemTargetText;
     public Button[] buttonItemTarget;
+    public string gameOverScene;
 
     // Start is called before the first frame update
     void Start()
@@ -199,18 +201,16 @@ public class BattleManager : MonoBehaviour
             //Verifica se todos os enemies morreram
             if(allEnemiesDead){
                 //End battle and victory
-                Debug.Log("Win");
-                activeBattlers.Clear();
+                StartCoroutine(EndBattleCo());
             }else{
                 //End battle failure
-                Debug.Log("Loss");
-                activeBattlers.Clear();
             }
             //Desativa batalha
-            battleScene.SetActive(false);
+            //battleScene.SetActive(false);
             //Indica que não está mais em batalha
-            GameManager.instance.battleActive = false;
-            battleActive = false;
+            //GameManager.instance.battleActive = false;
+            //battleActive = false;
+            StartCoroutine(GameOverCo());
         }else{
             while(activeBattlers[currentTurn].currentHP == 0){
                 currentTurn++;
@@ -393,8 +393,9 @@ public class BattleManager : MonoBehaviour
         //Verifica se o numero está na porcentagem
         if(fleeSuccess < chanceToFlee){
             //Termina a Batalha
-            battleActive = false;
-            battleScene.SetActive(false);
+            //battleActive = false;
+            //battleScene.SetActive(false);
+            StartCoroutine(EndBattleCo());
         }else{
             //Notifica que não conseguiu escapar
             battleNotice.theText.text = "Couln't Escape!";
@@ -405,6 +406,7 @@ public class BattleManager : MonoBehaviour
     }
 
     public void OpenItemMenu(){
+        //Abre os menus de item e atualiza os items do inventario
         uiButtonsHolder.gameObject.SetActive(false);
         itemMenu.gameObject.SetActive(true);
         itemTargetMenu.gameObject.SetActive(false);
@@ -435,6 +437,7 @@ public class BattleManager : MonoBehaviour
     }
 
     public void CloseItemMenu(){
+        //Fecha o menu de Item
         itemMenu.gameObject.SetActive(false);
         uiButtonsHolder.gameObject.SetActive(true);
         activeItem = null;
@@ -442,11 +445,13 @@ public class BattleManager : MonoBehaviour
 
     public void SelectItem(Item selectedItem){
         if(selectedItem == null){
+            //Retira as infos de item se for clicado em espaço vazio
             itemName.gameObject.SetActive(false);
             itemDsc.gameObject.SetActive(false);
             activeItem = null;
             itemTargetMenu.gameObject.SetActive(false);
         }else{
+            //Mostras as infos dos item ao clicar
             itemName.gameObject.SetActive(true);
             itemDsc.gameObject.SetActive(true);
             itemName.text = selectedItem.itemName;
@@ -457,14 +462,19 @@ public class BattleManager : MonoBehaviour
     }
 
     public void OpenTargetItemMenu(){
+        //erifica se há item selecionado
         if(activeItem != null){
+            //Abre tela de target
             itemTargetMenu.gameObject.SetActive(true);
+            //Percorre personagens
             for(int i = 0; i < GameManager.instance.playerStats.Length; i++){
+                //Ve se player está ativo
                 if(GameManager.instance.playerStats[i].gameObject.activeInHierarchy){
+                    //Cria botão
                     buttonItemTargetText[i].text = GameManager.instance.playerStats[i].charName;
                     buttonItemTarget[i].gameObject.SetActive(true);
-
                 }else{
+                    //desativa botão
                     buttonItemTarget[i].gameObject.SetActive(false);
                 }
             }
@@ -497,8 +507,76 @@ public class BattleManager : MonoBehaviour
     }
 
     public void CancelItemSelectTarget(){
+        //Fecha todos os Menus de Items
         itemTargetMenu.gameObject.SetActive(false);
         itemName.gameObject.SetActive(false);
         itemDsc.gameObject.SetActive(false);
+    }
+
+    public IEnumerator EndBattleCo(){
+        //Fecha os Menus de batalha
+        battleActive = false;
+        uiButtonsHolder.SetActive(false);
+        targetMenu.SetActive(false);
+        magicMenu.SetActive(false);
+        itemMenu.SetActive(false);
+        //Aguarda 0.5s
+        yield return new WaitForSeconds(.5f);
+        //Muda a tela para preto
+        UIFade.instance.FadeToBlack();
+        //Espera 1.5s
+        yield return new WaitForSeconds(1.5f);
+        //Percorre os char que estavam na batalha
+        for(int i = 0; i < activeBattlers.Count; i++)
+        {
+            //Verifica se é player
+            if(activeBattlers[i].isPlayer)
+            {
+                //Percorre e Verifica o correspondente nos stats
+                for(int j = 0; j < GameManager.instance.playerStats.Length; j++)
+                {
+                    if(activeBattlers[i].charName == GameManager.instance.playerStats[j].charName)
+                    {
+                        //Atualiza valores de HP e MP
+                        GameManager.instance.playerStats[j].currentHP = activeBattlers[i].currentHP;
+                        GameManager.instance.playerStats[j].currentMP = activeBattlers[i].currentMP;
+                    }
+                }
+            }
+            //detroi personagem na batalha
+            Destroy(activeBattlers[i].gameObject);
+        }
+        //Retorna a Tela
+        UIFade.instance.FadeFromBlack();
+        //Fecha a tela de batalha
+        battleScene.SetActive(false);
+        //Limpa os char de batalha
+        activeBattlers.Clear();
+        //Retorna ao turno 0
+        currentTurn = 0;
+        //Avisa que batlha acabou
+        GameManager.instance.battleActive = false;
+        /*if(fleeing)
+        {
+            GameManager.instance.battleActive = false;
+            fleeing = false;
+        } else
+        {
+            BattleReward.instance.OpenRewardScreen(rewardXP, rewardItems);
+        }*/
+        //Volta o som
+        AudioManager.instance.PlayBgm(FindObjectOfType<CameraController>().musicToPlay);
+    }
+
+    public IEnumerator GameOverCo(){
+        battleActive = false;
+        //Deixa a tela preta
+        UIFade.instance.FadeToBlack();
+        //Aguarda 1.5s
+        yield return new WaitForSeconds(1.5f);
+        //Desativa tela de Batalha
+        battleScene.SetActive(false);
+        //Chama tela de Game over
+        SceneManager.LoadScene(gameOverScene);
     }
 }

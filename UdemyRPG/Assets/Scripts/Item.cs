@@ -131,13 +131,13 @@ public class Item : MonoBehaviour
         }
         //Verifica se é arma
         if(isWeapon){
-            //Notifica que não conseguiu escapar
+            //Notifica que não conseguiu equipar
             BattleManager.instance.battleNotice.theText.text = "Couln't Equip In Battle!";
             BattleManager.instance.battleNotice.Activate();
         }
         //Verifica se é aramadura
         if(isArmor){
-            //Notifica que não conseguiu escapar
+            //Notifica que não conseguiu equipar
             BattleManager.instance.battleNotice.theText.text = "Couln't Equip In Battle!";
             BattleManager.instance.battleNotice.Activate();
         }
