@@ -100,12 +100,12 @@ MonoBehaviour:
   - Slash
   - Plasma
   charName: Skeleton
-  currentHp: 150
-  maxHp: 250
-  currentMP: 0
-  maxMP: 0
+  currentHP: 150
+  maxHP: 150
+  currentMP: 15
+  maxMP: 15
   strength: 5
-  defense: 5
+  defence: 0
   wpnPower: 5
   armrPower: 5
   hasDied: 0

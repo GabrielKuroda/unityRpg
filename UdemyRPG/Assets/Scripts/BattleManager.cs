@@ -30,6 +30,14 @@ public class BattleManager : MonoBehaviour
     public BattleMagicSelect[] magicButtons;
     public BattleNotification battleNotice;
     public int chanceToFlee = 35;
+    public ItemButton[] itemsButtons;
+    public GameObject itemMenu;
+    public Text itemName, itemDsc;
+    public GameObject itemTargetMenu;
+    public Item activeItem;
+    public Text[] playerItemNames, playerItemHP, playerItemMP;
+    public Text[] buttonItemTargetText;
+    public Button[] buttonItemTarget;
 
     // Start is called before the first frame update
     void Start()
@@ -96,8 +104,8 @@ public class BattleManager : MonoBehaviour
                             activeBattlers.Add(newPlayer);
                             //Add status do char na lista
                             CharStats thePlayer = GameManager.instance.playerStats[i];
-                            activeBattlers[i].currentHp = thePlayer.currentHP;
-                            activeBattlers[i].maxHp = thePlayer.maxHP;
+                            activeBattlers[i].currentHP = thePlayer.currentHP;
+                            activeBattlers[i].maxHP = thePlayer.maxHP;
                             activeBattlers[i].currentMP = thePlayer.currentMP;
                             activeBattlers[i].maxMP = thePlayer.maxMP;
                             activeBattlers[i].strength = thePlayer.strength;
@@ -158,12 +166,12 @@ public class BattleManager : MonoBehaviour
         //Passa por todos os enemies e players
         for(int i = 0; i < activeBattlers.Count; i++){
             //Verifica se o HP está abaixo de 0
-            if(activeBattlers[i].currentHp < 0){
+            if(activeBattlers[i].currentHP < 0){
                 //Indica como 0
-                activeBattlers[i].currentHp = 0;
+                activeBattlers[i].currentHP = 0;
             }
             //Verifica se o HP é 0
-            if(activeBattlers[i].currentHp == 0){
+            if(activeBattlers[i].currentHP == 0){
                 //Handle dead Battler
             }else{
                 //Verifica se é player ou não
@@ -195,7 +203,7 @@ public class BattleManager : MonoBehaviour
             GameManager.instance.battleActive = false;
             battleActive = false;
         }else{
-            while(activeBattlers[currentTurn].currentHp == 0){
+            while(activeBattlers[currentTurn].currentHP == 0){
                 currentTurn++;
                 Debug.Log(activeBattlers.Count);
                 if(currentTurn >= activeBattlers.Count){
@@ -225,7 +233,7 @@ public class BattleManager : MonoBehaviour
         //Percorre todos os Personagens na batalha
         for(int i = 0; i < activeBattlers.Count; i++){
             //Verifica se é player e se esta vivo
-            if(activeBattlers[i].isPlayer && activeBattlers[i].currentHp > 0){
+            if(activeBattlers[i].isPlayer && activeBattlers[i].currentHP > 0){
                 //Add na lista
                 players.Add(i);
             }
@@ -262,7 +270,7 @@ public class BattleManager : MonoBehaviour
         //loga
         Debug.Log(activeBattlers[currentTurn]. charName + " is dealing " + damageCalc + "(" + damageToGive + ") damage to " + activeBattlers[target].charName);
         //Realiza o dano
-        activeBattlers[target].currentHp -= damageToGive;
+        activeBattlers[target].currentHP -= damageToGive;
         //Instancia indicador de dano
         Instantiate(theDamageNumber, activeBattlers[target].transform.position, activeBattlers[target].transform.rotation).SetDamage(damageToGive);
         //Atuliza os Stats dos Players
@@ -281,7 +289,7 @@ public class BattleManager : MonoBehaviour
                     //Set nos dados nas Labels e ativa as labels
                     playerNames[i].gameObject.SetActive(true);
                     playerNames[i].text = playerData.charName;
-                    playerHP[i].text = Mathf.Clamp(playerData.currentHp, 0 , int.MaxValue) +"/"+ playerData.maxHp;
+                    playerHP[i].text = Mathf.Clamp(playerData.currentHP, 0 , int.MaxValue) +"/"+ playerData.maxHP;
                     playerMP[i].text = playerData.currentMP +"/"+ playerData.maxMP;
                 }else{
                     //Desativa as labels
@@ -385,5 +393,103 @@ public class BattleManager : MonoBehaviour
             //Chama proximo turno
             NextTurn();
         }
+    }
+
+    public void OpenItemMenu(){
+        uiButtonsHolder.gameObject.SetActive(false);
+        itemMenu.gameObject.SetActive(true);
+        itemTargetMenu.gameObject.SetActive(false);
+        UpdateItemUIStats();
+        ShowItems();
+    }
+
+    public void ShowItems(){
+        GameManager.instance.SortItems();
+        //Percorre os botões de Items
+        for(int i = 0; i < itemsButtons.Length; i++){
+            //Deifine os valores dos btns
+            itemsButtons[i].buttonValue = i;
+            //Verifica se há Item para mostrar
+            if(GameManager.instance.itemsHeld[i] != ""){
+                //Torna o Item Ativo no menu
+                itemsButtons[i].buttonImage.gameObject.SetActive(true);
+                //PEga a Sprite do Item
+                itemsButtons[i].buttonImage.sprite = GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[i]).itemSprite;
+                //Pega a Quantidade do item
+                itemsButtons[i].amountText.text = GameManager.instance.numberOfItems[i].ToString();
+            }else{
+                //Desativa o Item
+                itemsButtons[i].buttonImage.gameObject.SetActive(false);
+                itemsButtons[i].amountText.text = "";
+            }
+        }
+    }
+
+    public void CloseItemMenu(){
+        itemMenu.gameObject.SetActive(false);
+        uiButtonsHolder.gameObject.SetActive(true);
+        activeItem = null;
+    }
+
+    public void SelectItem(Item selectedItem){
+        if(selectedItem == null){
+            itemName.gameObject.SetActive(false);
+            itemDsc.gameObject.SetActive(false);
+            activeItem = null;
+            itemTargetMenu.gameObject.SetActive(false);
+        }else{
+            itemName.gameObject.SetActive(true);
+            itemDsc.gameObject.SetActive(true);
+            itemName.text = selectedItem.itemName;
+            itemDsc.text = selectedItem.description;
+            activeItem = selectedItem;
+            itemTargetMenu.gameObject.SetActive(false);
+        } 
+    }
+
+    public void OpenTargetItemMenu(){
+        if(activeItem != null){
+            itemTargetMenu.gameObject.SetActive(true);
+            for(int i = 0; i < GameManager.instance.playerStats.Length; i++){
+                if(GameManager.instance.playerStats[i].gameObject.activeInHierarchy){
+                    buttonItemTargetText[i].text = GameManager.instance.playerStats[i].charName;
+                    buttonItemTarget[i].gameObject.SetActive(true);
+
+                }else{
+                    buttonItemTarget[i].gameObject.SetActive(false);
+                }
+            }
+        }
+    }
+
+    public void UpdateItemUIStats(){
+        //Percorre os Labels de Stats
+        for(int i = 0; i < playerItemNames.Length; i++){
+            //Verifica se há + de um personagem na batalha
+            if(activeBattlers.Count > 1){
+                //Verifica se o Personagem é Player
+                if(activeBattlers[i].isPlayer){
+                    //Pega os Dados do Player
+                    BattleChar playerData = activeBattlers[i];
+                    //Set nos dados nas Labels e ativa as labels
+                    playerItemNames[i].gameObject.SetActive(true);
+                    playerItemNames[i].text = playerData.charName;
+                    playerItemHP[i].text = Mathf.Clamp(playerData.currentHP, 0 , int.MaxValue) +"/"+ playerData.maxHP;
+                    playerItemMP[i].text = playerData.currentMP +"/"+ playerData.maxMP;
+                }else{
+                    //Desativa as labels
+                    playerItemNames[i].gameObject.SetActive(false);
+                }
+            }else{
+                //Desativa as Labels
+                playerItemNames[i].gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void CancelItemSelectTarget(){
+        itemTargetMenu.gameObject.SetActive(false);
+        itemName.gameObject.SetActive(false);
+        itemDsc.gameObject.SetActive(false);
     }
 }

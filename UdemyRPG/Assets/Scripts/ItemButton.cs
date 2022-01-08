@@ -51,5 +51,10 @@ public class ItemButton : MonoBehaviour
                 }
             }
         }
+
+        if(BattleManager.instance.itemMenu.activeInHierarchy){
+            GameMenu.instance.PlayButtonSound();
+            BattleManager.instance.SelectItem(GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[buttonValue]));
+        }
     }
 }

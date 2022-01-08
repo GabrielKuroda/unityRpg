@@ -92,4 +92,55 @@ public class Item : MonoBehaviour
         //Tira o item do inventario
         GameManager.instance.RemoveItem(itemName);
     }
+
+    public int UseInBattle(int charToUseOn){
+        //Pega o Char
+        BattleChar selectedChar = BattleManager.instance.activeBattlers[charToUseOn];
+        //Verifica se é um Item
+        if(isItem){
+            //Verifica se afeta o HP
+            if(affectHP){
+                //Add HP
+                selectedChar.currentHP += amountToChange;
+                //Verifica se o HP atual passou o Maximo
+                if(selectedChar.currentHP > selectedChar.maxHP){
+                    //Set o Hp = o maximo
+                    selectedChar.currentHP = selectedChar.maxHP;
+                }
+            }
+            //Verifica se afeta o MP
+            if(affectMP){
+                //Add MP
+                selectedChar.currentMP += amountToChange;
+                //Verifica se o MP atual passou o Maximo
+                if(selectedChar.currentMP > selectedChar.maxMP){
+                    //Set o MP = o maximo
+                    selectedChar.currentMP = selectedChar.maxMP;
+                }
+            }
+            //Verifica se afeta str
+            if(affectStr){
+                //Add Str
+                selectedChar.strength += amountToChange;
+            }
+            //Tira o item do inventario
+            GameManager.instance.RemoveItem(itemName);
+            BattleManager.instance.battleNotice.theText.text = itemName + " was Used!";
+            BattleManager.instance.battleNotice.Activate();
+            return 0;
+        }
+        //Verifica se é arma
+        if(isWeapon){
+            //Notifica que não conseguiu escapar
+            BattleManager.instance.battleNotice.theText.text = "Couln't Equip In Battle!";
+            BattleManager.instance.battleNotice.Activate();
+        }
+        //Verifica se é aramadura
+        if(isArmor){
+            //Notifica que não conseguiu escapar
+            BattleManager.instance.battleNotice.theText.text = "Couln't Equip In Battle!";
+            BattleManager.instance.battleNotice.Activate();
+        }
+        return 1;
+    }
 }
