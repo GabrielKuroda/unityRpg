@@ -173,11 +173,20 @@ public class BattleManager : MonoBehaviour
             //Verifica se o HP é 0
             if(activeBattlers[i].currentHP == 0){
                 //Handle dead Battler
+                if(activeBattlers[i].isPlayer){
+                    //Muda para a Sprite de Dead
+                    activeBattlers[i].theSprite.sprite = activeBattlers[i].deadSprite;
+                }else{
+                    //Chama a atimação de Fade
+                    activeBattlers[i].EnemyFade();
+                }
             }else{
                 //Verifica se é player ou não
                 if(activeBattlers[i].isPlayer){
                     //Indica que há players vivos
                     allPlayersDead = false;
+                    //Muda para a Sprite Alive
+                    activeBattlers[i].theSprite.sprite = activeBattlers[i].aliveSprite;
                 }else{
                     //Indica que há enimies vivos
                     allEnemiesDead = false;
@@ -338,7 +347,7 @@ public class BattleManager : MonoBehaviour
         //Percorre os botões de target
         for(int i = 0; i < targetButtons.Length; i++){
             //Verifica se o deve criar o botão, com base na qtd de enemies
-            if(enemies.Count > i){
+            if(enemies.Count > i && activeBattlers[enemies[i]].currentHP > 0){
                 //Cria o botão
                 targetButtons[i].gameObject.SetActive(true);
                 targetButtons[i].moveName = moveName;
