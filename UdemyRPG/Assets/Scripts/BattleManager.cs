@@ -41,8 +41,9 @@ public class BattleManager : MonoBehaviour
     public Button[] buttonItemTarget;
     public string gameOverScene;
     private bool fleeing;
-    public int rewardXp;
+    public int rewardXp, rewardGold;
     public string[] rewardItems;
+    public bool cannotFlee;
 
     // Start is called before the first frame update
     void Start()
@@ -55,9 +56,6 @@ public class BattleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.T)){
-            BattleStart(new string[] {"Eyeball","Spider","Skeleton"});
-        }
         //verifica se está em batalha
         if(battleActive){
             //Verifica se está em aguardando um turno
@@ -74,14 +72,11 @@ public class BattleManager : MonoBehaviour
                     StartCoroutine(EnemyMoveCo());
                 }
             }
-
-            if(Input.GetKeyDown(KeyCode.N)){
-                NextTurn();
-            }
         }
     }
 
-    public void BattleStart(string[] enemiesToSpawn){
+    public void BattleStart(string[] enemiesToSpawn, bool setCannotFlee){
+        cannotFlee = setCannotFlee;
         //Verifica se está em batalha
         if(!battleActive){
             //Informa estar em Batalha
@@ -390,22 +385,28 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    public void Flee(){
-        //Pega um numero entre 0 - 100
-        int fleeSuccess = Random.Range(0,100);
-        //Verifica se o numero está na porcentagem
-        if(fleeSuccess < chanceToFlee){
-            //Termina a Batalha
-            //battleActive = false;
-            //battleScene.SetActive(false);
-            fleeing = true;
-            StartCoroutine(EndBattleCo());
-        }else{
+    public void Flee(){//Verifica se pode escapar dessa batalha
+        if(cannotFlee){
             //Notifica que não conseguiu escapar
-            battleNotice.theText.text = "Couln't Escape!";
+            battleNotice.theText.text = "Can't Flee this Battle!";
             battleNotice.Activate();
-            //Chama proximo turno
-            NextTurn();
+        }else{
+            //Pega um numero entre 0 - 100
+            int fleeSuccess = Random.Range(0,100);
+            //Verifica se o numero está na porcentagem
+            if(fleeSuccess < chanceToFlee){
+                //Termina a Batalha
+                //battleActive = false;
+                //battleScene.SetActive(false);
+                fleeing = true;
+                StartCoroutine(EndBattleCo());
+            }else{
+                //Notifica que não conseguiu escapar
+                battleNotice.theText.text = "Couln't Escape!";
+                battleNotice.Activate();
+                //Chama proximo turno
+                NextTurn();
+            }
         }
     }
 
@@ -569,7 +570,7 @@ public class BattleManager : MonoBehaviour
         } else
         {
             //Chama a tela de Reward
-            BattleReward.instance.OpenRewardScreen(rewardXp, rewardItems);
+            BattleReward.instance.OpenRewardScreen(rewardXp, rewardGold, rewardItems);
         }
         //Volta o som
         AudioManager.instance.PlayBgm(FindObjectOfType<CameraController>().musicToPlay);

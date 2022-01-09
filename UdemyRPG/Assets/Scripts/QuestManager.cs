@@ -21,17 +21,10 @@ public class QuestManager : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Q)){
-            Debug.Log(CheckIfComplete("Quest Test"));
-            MarkQuestComplete("Quest Test");
+            Debug.Log(CheckIfComplete("Enter the Cave"));
+            MarkQuestComplete("Enter the Cave");
         }
 
-        if(Input.GetKeyDown(KeyCode.O)){
-            SaveQuestData();
-        }
-
-        if(Input.GetKeyDown(KeyCode.P)){
-            LoadQuestData();
-        }
     }
 
     public int GetQuestNumber(string questToFind){

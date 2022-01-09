@@ -7,10 +7,12 @@ public class BattleReward : MonoBehaviour
 {
 
     public static BattleReward instance;
-    public Text expText, itemText;
+    public Text expText, itemText, goldText;
     public GameObject rewardScreen;
     public string[] rewardItems;
-    public int expEarned;
+    public int expEarned, rewardGold;
+    public bool markQuestComplete;
+    public string questToMark;
 
     // Start is called before the first frame update
     void Start()
@@ -21,18 +23,15 @@ public class BattleReward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Y))
-        {
-            OpenRewardScreen(54, new string[] { "Iron Sword", "Iron Armor" });
-        }
     }
 
-    public void OpenRewardScreen(int xp, string[] rewards){
+    public void OpenRewardScreen(int xp,int gold, string[] rewards){
         //Set nas variaveis
         expEarned = xp;
         rewardItems = rewards;
         //Vria os textos
         expText.text = "Everyone earned "+ expEarned + " xp!";
+        goldText.text = "You earned "+ rewardGold + " g!";
         itemText.text = "";
         for(int i = 0; i < rewardItems.Length; i++)
         {
@@ -59,9 +58,15 @@ public class BattleReward : MonoBehaviour
             //Add os items
             GameManager.instance.AddItem(rewardItems[i]);
         }
+        GameManager.instance.currentGold += rewardGold;
         //Fecha a Tela
         rewardScreen.SetActive(false);
         //Indica que a Batalha acabou
         GameManager.instance.battleActive = false;
+        //Finaliza Quest
+        if(markQuestComplete)
+        {
+            QuestManager.instance.MarkQuestComplete(questToMark);
+        }
     }
 }

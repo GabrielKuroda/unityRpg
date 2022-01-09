@@ -77,6 +77,15 @@ TextureImporter:
   - first:
       213: 8631269386824879595
     second: ShopKeeper
+  - first:
+      213: 6610015202153852503
+    second: NPC Characters_1
+  - first:
+      213: 2140832259286623340
+    second: NPC Characters_2
+  - first:
+      213: -1596342142439857335
+    second: NPC Characters_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -195,7 +204,7 @@ TextureImporter:
         width: 12
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -203,6 +212,69 @@ TextureImporter:
       bones: []
       spriteID: bed8662e6cd68c770800000000000000
       internalID: 8631269386824879595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Characters_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 17
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75eef441ecd7bbb50800000000000000
+      internalID: 6610015202153852503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Characters_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 17
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64e972e893c5bd10800000000000000
+      internalID: 2140832259286623340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC Characters_3
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 17
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 943e2eb7747a8d9e0800000000000000
+      internalID: -1596342142439857335
       vertices: []
       indices: 
       edges: []

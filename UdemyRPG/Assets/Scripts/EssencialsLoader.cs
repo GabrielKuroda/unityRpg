@@ -8,6 +8,7 @@ public class EssencialsLoader : MonoBehaviour
     public GameObject player;
     public GameObject gameManager;
     public GameObject audioManager;
+    public GameObject battleMan;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,12 @@ public class EssencialsLoader : MonoBehaviour
         {
             //Instancia o AudioManager
             AudioManager.instance = Instantiate(audioManager).GetComponent<AudioManager>();
+        }
+        //Verifica se o BattleManager não existe
+        if(BattleManager.instance == null)
+        {
+            //Instancia o BattleManager
+            BattleManager.instance = Instantiate(battleMan).GetComponent<BattleManager>();
         }
     }
 

@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7655536380603564130
 Transform:
   m_ObjectHideFlags: 0
@@ -178,6 +178,9 @@ MonoBehaviour:
   fadingBetweenAreas: 0
   shopActive: 0
   battleActive: 0
+  innActive: 0
+  chestOpen: 0
+  addingNewMember: 0
   itemsHeld:
   - 
   - 
@@ -228,6 +231,12 @@ MonoBehaviour:
   - {fileID: 6576467113025635566, guid: cbe204d58dd1d404296a98e038b1c8a1, type: 3}
   - {fileID: 2462653511624321147, guid: b33fdd35610fd5b4496e4002c23af70d, type: 3}
   currentGold: 100
+  chests:
+  - GirlHouse-1
+  - Cave-1
+  - Cave-2
+  - Cave-3
+  alreadyOpened: 01
 --- !u!114 &2005357973740720889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,10 +251,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questMarkerNames:
   - 
-  - Fight the Demon
-  - Enter the Cave
-  - Quest Test
-  - Save the World
+  - Enter the Cave - Get Mission
+  - Enter the Cave - Kill the Dragon
   questMarkersComplete: 
 --- !u!1 &6355245490875331822
 GameObject:

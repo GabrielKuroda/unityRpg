@@ -8,17 +8,22 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public CharStats[] playerStats;
-    public bool gameMenuOpen, dialogActive, fadingBetweenAreas, shopActive, battleActive;
+    public bool gameMenuOpen, dialogActive, fadingBetweenAreas, shopActive, battleActive, innActive, chestOpen, addingNewMember;
     public string[] itemsHeld;
     public int[] numberOfItems;
     public Item[] refereceItems;
 
     public int currentGold;
 
+    public string[] chests;
+    public bool[] alreadyOpened;
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+
+        alreadyOpened = new bool[chests.Length];
 
         DontDestroyOnLoad(gameObject);
 
@@ -29,20 +34,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //Verifica situação do Menu, Load, Dialogo e Batalha
-        if(gameMenuOpen || dialogActive || fadingBetweenAreas || shopActive || battleActive){
+        if(gameMenuOpen || dialogActive || fadingBetweenAreas || shopActive || battleActive || innActive || chestOpen || addingNewMember){
             //Impede movimento do Player
             PlayerController.instance.canMove = false;
         }else{
             //Autoriza Movimento do player
             PlayerController.instance.canMove = true;
-        }
-
-        if(Input.GetKeyDown(KeyCode.O)){
-            saveData();
-        }
-
-        if(Input.GetKeyDown(KeyCode.P)){
-            LoadData();
         }
     }
 
@@ -217,6 +214,26 @@ public class GameManager : MonoBehaviour
         for(int i = 0; i < itemsHeld.Length; i++){
             itemsHeld[i] = PlayerPrefs.GetString("ItemInInventory_" + i);
             numberOfItems[i] = PlayerPrefs.GetInt("ItemAmount_" + i);
+        }
+    }
+    
+    public bool IsEmpty(string nameChest){
+        for(int i = 0; i < chests.Length; i++){
+            if(chests[i] == nameChest){
+                return alreadyOpened[i];
+            }
+        }
+        return true;
+    }
+
+    public void CloseChest(string nameChest){
+        Debug.Log(nameChest);
+        chestOpen = false;
+        for(int i = 0; i < chests.Length; i++){
+            if(chests[i] == nameChest){
+                Debug.Log(chests[i]);
+                alreadyOpened[i] = true;
+            }
         }
     }
 }

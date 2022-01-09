@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BattleReward.cs" />
      <Compile Include="Assets\Scripts\DamageNumber.cs" />
      <Compile Include="Assets\Scripts\PlayerLoader.cs" />
      <Compile Include="Assets\Scripts\ItemButton.cs" />
@@ -53,6 +54,7 @@
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\AttackEffect.cs" />
      <Compile Include="Assets\Scripts\GameOver.cs" />
+     <Compile Include="Assets\Scripts\BattleStarter.cs" />
      <Compile Include="Assets\Scripts\GameMenu.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\ShopKeeper.cs" />
@@ -68,9 +70,15 @@
      <Compile Include="Assets\Scripts\UIFade.cs" />
      <Compile Include="Assets\Scripts\DialogManager.cs" />
      <Compile Include="Assets\Scripts\DestroyOverLifetime.cs" />
+     <Compile Include="Assets\Scripts\BattleType.cs" />
      <Compile Include="Assets\Scripts\EssencialsLoader.cs" />
      <Compile Include="Assets\Scripts\BattleNotification.cs" />
-     <Compile Include="Assets\Scripts\BattleReward.cs" />
+     <Compile Include="Assets\Scripts\Chest.cs" />
+     <Compile Include="Assets\Scripts\ChestReward.cs" />
+     <Compile Include="Assets\Scripts\InnKeeper.cs" />
+     <Compile Include="Assets\Scripts\Inn.cs" />
+     <Compile Include="Assets\Scripts\NewMember.cs" />
+     <Compile Include="Assets\Scripts\NewMemberUI.cs" />
      <None Include="Assets\Udemy RPG Assets\Licence.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.24f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
